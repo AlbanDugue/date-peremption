@@ -16,6 +16,10 @@ body {
     color: white;
 }
 
+a {
+    text-decoration: none;
+}
+
 hr {
     width: 66%;
     height: 0.1rem;
@@ -123,4 +127,111 @@ footer {
     color: white;
     background-color: #78e08f;
     border: solid 0.2rem white;
+}
+
+/********************/
+/****_PAGE_HOME_*****/
+/********************/
+#container-liste {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+article {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 1rem;
+    padding: 1rem;
+    border-radius: 2rem;
+}
+
+article:hover {
+    background-color: #b8e994;
+}
+
+@media screen and (min-width: 600px) {
+    article {
+        margin-bottom: 1.5rem;
+        width: 50%;
+        font-size: 2rem;
+    }
+}
+
+.date-peremption {
+    flex: 1;
+    font-weight: bold;
+}
+
+.nom-aliment {
+    flex: 2;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.bouton-suppr {
+    padding: 1rem;
+    background-color: white;
+    color: #78e08f;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    height: 2.5rem;
+    width: 2.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.bouton-suppr:hover {
+    background-color: #78e08f;
+    color: white;
+    border: solid 0.2rem white;
+}
+
+.icon-suppr {
+    font-size: 1rem;
+}
+
+#bloc-ajout {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: flex-end;
+    width: 100%;
+    padding: 1rem 0.5rem;
+}
+
+@media screen and (min-width: 600px) {
+    #bloc-ajout  {
+        width: 50%;
+    }
+}
+
+#bouton-ajout {
+    padding: 1rem;
+    background-color: #b8e994;
+    color: white;
+    border-radius: 50%;
+    outline: none;
+    border: solid 0.2rem white;
+    height: 3.5rem;
+    width: 3.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+#bouton-ajout:hover {
+    color: #b8e994;
+    background-color: white;
+    border: solid 0.2rem #b8e994;
 }
