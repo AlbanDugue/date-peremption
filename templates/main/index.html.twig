@@ -27,10 +27,18 @@
                 <a href="#"><button class="bouton-suppr"><i class="fas fa-trash icon-suppr"></i></button></a>
             </div>
         </article>
+        {{ form_start (alimentForm) }}
+
+        {{ form_widget(alimentForm) }}
+        {{ form_end (alimentForm) }}
         <div id="bloc-ajout">
             <a href="#"><button id="bouton-ajout">+</button></a>
         </div>
 
     </div>
+
+{% endblock %}
+
+{% block javascripts %}
 
 {% endblock %}
