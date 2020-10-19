@@ -5,11 +5,7 @@ namespace App\Controller;
 use App\Entity\Aliment;
 use App\Form\AlimentType;
 use App\Repository\AlimentRepository;
-use App\Repository\CampusRepository;
-use App\Repository\EtatRepository;
-use App\Repository\LieuRepository;
 use App\Repository\UserRepository;
-use App\Repository\VilleRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,6 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class MainController extends AbstractController
 {
+
     /**
      * @Route("/", name="home")
      */
@@ -43,8 +40,11 @@ class MainController extends AbstractController
             $em->flush();
         }
 
+        $aliments = $alimentRepository->findAll();
+
         return $this->render('main/index.html.twig', [
             'controller_name' => 'MainController',
+            "aliments"=>$aliments,
             'alimentForm' => $alimentForm->createView()
         ]);
     }

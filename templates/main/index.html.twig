@@ -5,28 +5,19 @@
 {% block main %}
 
     <div id="container-liste">
-        <article>
-            <div>
-                <p class="date-peremption">17/06/2020</p>
-            </div>
-            <div>
-                <p class="nom-aliment">Poisson</p>
-            </div>
-            <div>
-                <a href="#"><button class="bouton-suppr"><i class="fas fa-trash icon-suppr"></i></button></a>
-            </div>
-        </article>
-        <article>
-            <div>
-                <p class="date-peremption">05/07/2020</p>
-            </div>
-            <div>
-                <p class="nom-aliment">Crème fraîche</p>
-            </div>
-            <div>
-                <a href="#"><button class="bouton-suppr"><i class="fas fa-trash icon-suppr"></i></button></a>
-            </div>
-        </article>
+        {% for aliment in aliments %}
+            <article>
+                <div>
+                    <p class="date-peremption">{{ aliment.datePeremption|date("m/d/Y") }}</p>
+                </div>
+                <div>
+                    <p class="nom-aliment">{{ aliment.nom }}</p>
+                </div>
+                <div>
+                    <a href="#"><button class="bouton-suppr"><i class="fas fa-trash icon-suppr"></i></button></a>
+                </div>
+            </article>
+        {% endfor %}
 
         <!-- Trigger/Open The Modal -->
         <div id="bloc-ajout">
@@ -48,7 +39,6 @@
             </div>
         </div>
     </div>
-
 {% endblock %}
 
 {% block javascripts %}
