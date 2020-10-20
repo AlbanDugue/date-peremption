@@ -40,7 +40,7 @@ class MainController extends AbstractController
             $em->flush();
         }
 
-        $aliments = $alimentRepository->findAll();
+        $aliments = $alimentRepository->findBy(["proprietaire"=> !null],['datePeremption'=>'ASC']);
 
         return $this->render('main/index.html.twig', [
             'controller_name' => 'MainController',
