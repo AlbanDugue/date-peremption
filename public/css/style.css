@@ -139,6 +139,17 @@ footer {
     align-items: center;
 }
 
+#pas-aliments {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#pas-aliments h2 {
+    margin: 0.5rem 0;
+}
+
 article {
     display: flex;
     flex-direction: row;

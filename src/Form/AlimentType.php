@@ -19,7 +19,7 @@ class AlimentType extends AbstractType
             ])
             ->add('datePeremption', DateType::class, [
                 'label' => 'Date de péremption',
-                'widget' => 'single_text',
+                'widget' => 'single_text'
             ])
         ;
     }
