@@ -2,18 +2,73 @@
 
 namespace App\Controller;
 
+use App\Entity\Aliment;
+use App\Form\AlimentType;
+use App\Repository\AlimentRepository;
+use App\Repository\UserRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class MainController extends AbstractController
 {
+
     /**
      * @Route("/", name="home")
      */
-    public function index()
+    public function index(  Request $request,
+                            EntityManagerInterface $em,
+                            UserRepository $userRepository,
+                            AlimentRepository $alimentRepository
+                            )
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
+        $proprietaire = $this->getUser();
+
+        $aliment = new Aliment();
+        $alimentForm = $this->createForm(AlimentType::class, $aliment);
+
+        $alimentForm->handleRequest($request);
+
+        if ($alimentForm->isSubmitted() && $alimentForm->isValid()) {
+
+            $aliment->setProprietaire($proprietaire);
+            $aliment->setArchive(false);
+
+            $em->persist($aliment);
+            $em->flush();
+
+            return $this->redirectToRoute('home');
+        }
+
+        $aliments = $alimentRepository->findBy(["archive"=> false],['datePeremption'=>'ASC']);
+
         return $this->render('main/index.html.twig', [
             'controller_name' => 'MainController',
+            "aliments"=>$aliments,
+            'alimentForm' => $alimentForm->createView()
         ]);
     }
+
+    /**
+     * @Route("/supprimer-aliment/{id}", name="delete")
+     * @param int $id
+     */
+    public function deleteAliment(  int $id,
+                                    Request $request,
+                                    EntityManagerInterface $em,
+                                    UserRepository $userRepository,
+                                    AlimentRepository $alimentRepository
+    )
+    {
+        $aliment = $alimentRepository->find($id);
+        $aliment->setArchive(true);
+        $em->persist($aliment);
+        $em->flush();
+
+        return $this->redirectToRoute('home');
+    }
+
 }

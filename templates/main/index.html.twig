@@ -5,32 +5,74 @@
 {% block main %}
 
     <div id="container-liste">
-        <article>
-            <div>
-                <p class="date-peremption">17/06/2020</p>
-            </div>
-            <div>
-                <p class="nom-aliment">Poisson</p>
-            </div>
-            <div>
-                <a href="#"><button class="bouton-suppr"><i class="fas fa-trash icon-suppr"></i></button></a>
-            </div>
-        </article>
-        <article>
-            <div>
-                <p class="date-peremption">05/07/2020</p>
-            </div>
-            <div>
-                <p class="nom-aliment">Crème fraîche</p>
-            </div>
-            <div>
-                <a href="#"><button class="bouton-suppr"><i class="fas fa-trash icon-suppr"></i></button></a>
-            </div>
-        </article>
+        {% for aliment in aliments %}
+            <article>
+                <div>
+                    <p class="date-peremption">{{ aliment.datePeremption|date('d/m/y') }}</p>
+                </div>
+                <div>
+                    <p class="nom-aliment">{{ aliment.nom }}</p>
+                </div>
+                <div>
+                    <button class="bouton-suppr"><a href="{{ path('delete', {'id': aliment.id}) }}">&times;</a></button>
+                </div>
+            </article>
+        {% endfor %}
+
+        <!-- Trigger/Open The Modal -->
         <div id="bloc-ajout">
-            <a href="#"><button id="bouton-ajout">+</button></a>
+            <button id="bouton-ajout"><a href="#">+</a></button>
         </div>
 
-    </div>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
 
+            <!-- Modal content -->
+            <div class="modal-content">
+                    <div class="close" id="div-close-modal">&times;</div>
+                {{ form_start (alimentForm) }}
+                <div id="formAjoutAliment">
+                {{ form_row(alimentForm.nom) }}
+
+                {{ form_row(alimentForm.datePeremption) }}
+
+                {{ form_widget(alimentForm) }}
+
+                <button id="validation-ajout" type="submit">Ajouter</button>
+                </div>
+
+                {{ form_end (alimentForm) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("bouton-ajout");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 {% endblock %}
