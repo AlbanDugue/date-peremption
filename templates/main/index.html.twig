@@ -9,7 +9,7 @@
             <div id="pas-aliments">
                 <h2>🥑 🍕 🍄 🧃 🥝 🍰</h2>
                 <h2> Aucuns aliments 😁</h2>
-                <p>Ajouter des aliments avec le bouton</p>
+                <p>Ajoutes des aliments avec le bouton</p>
                 <h2>🧃 🥝 🍰 🥑 🍕 🍄</h2>
             </div>
         {% endif %}
@@ -20,7 +20,7 @@
                 </div>
                 <div>
                     <p class="nom-aliment">
-                        {% if aliment.datePeremption < date('now -5 day') %}
+                        {% if aliment.datePeremption < date('now -3 day') %}
                             ☠
                         {% endif %}
                         {{ aliment.nom }}
@@ -30,7 +30,7 @@
                         {% if aliment.datePeremption < date('now + 2 day') and aliment.datePeremption > date('now') %}
                             ⏳
                         {% endif %}
-                        {% if aliment.datePeremption < date('now -5 day') %}
+                        {% if aliment.datePeremption < date('now -3 day') %}
                             ☠
                         {% endif %}
                     </p>
