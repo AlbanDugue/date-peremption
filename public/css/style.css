@@ -186,16 +186,21 @@ article:hover {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.bouton-suppr a {
+    color: #78e08f;
+}
+
+.bouton-suppr:hover a {
+    color: white;
 }
 
 .bouton-suppr:hover {
     background-color: #78e08f;
-    color: white;
     border: solid 0.2rem white;
-}
-
-.icon-suppr {
-    font-size: 1rem;
 }
 
 #bloc-ajout {
@@ -230,8 +235,15 @@ article:hover {
     font-size: 3rem;
 }
 
-#bouton-ajout:hover {
+#bouton-ajout a {
+    color: white;
+}
+
+#bouton-ajout a:hover {
     color: #b8e994;
+}
+
+#bouton-ajout:hover {
     background-color: white;
     border: solid 0.2rem #b8e994;
 }
@@ -241,10 +253,10 @@ article:hover {
 /********************/
 
 #validation-ajout {
-    padding: 0.2rem 0.5rem;
+    padding: 0.7rem 1rem;
     background-color: #78e08f;
     color: white;
-    border-radius: 0.5rem;
+    border-radius: 2rem;
     outline: none;
     border: solid 0.2rem white;
     display: flex;
@@ -252,6 +264,7 @@ article:hover {
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
+    font-weight: bold;
 }
 
 #validation-ajout:hover {
@@ -264,7 +277,7 @@ article:hover {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    padding-top: 15rem; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -279,19 +292,25 @@ article:hover {
 .modal-content {
     background-color: #fefefe;
     margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
     width: 80%;
     color: #78e08f;
     border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 600px) {
+    .modal-content {
+        width: 50%;
+    }
 }
 
 /* The Close Button */
 .close {
     color: #78e08f;
     float: right;
-    font-size: 4rem;
     font-weight: bold;
+    margin-right: 1rem;
 }
 
 .close:hover,
@@ -299,4 +318,51 @@ article:hover {
     color: #079992;
     text-decoration: none;
     cursor: pointer;
+}
+
+#div-close-modal {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 3rem;
+}
+
+#formAjoutAliment {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem 1rem 1rem;
+}
+
+#formAjoutAliment div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#formAjoutAliment label {
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#formAjoutAliment input {
+    width: 14rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    outline: none;
+    border: none;
+    text-align: center;
+    font-size: 1rem;
+    color: white;
+    background-color: #78e08f;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+#formAjoutAliment input:hover, .block-form input:focus {
+    color: #78e08f;
+    background-color: white;
+    border: solid 0.2rem #78e08f;
 }

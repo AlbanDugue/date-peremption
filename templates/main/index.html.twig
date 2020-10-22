@@ -8,20 +8,20 @@
         {% for aliment in aliments %}
             <article>
                 <div>
-                    <p class="date-peremption">{{ aliment.datePeremption|date("m/d/Y") }}</p>
+                    <p class="date-peremption">{{ aliment.datePeremption|date('d/m/y') }}</p>
                 </div>
                 <div>
                     <p class="nom-aliment">{{ aliment.nom }}</p>
                 </div>
                 <div>
-                    <a href="#"><button class="bouton-suppr"><i class="fas fa-trash icon-suppr"></i></button></a>
+                    <button class="bouton-suppr"><a href="{{ path('delete', {'id': aliment.id}) }}">&times;</a></button>
                 </div>
             </article>
         {% endfor %}
 
         <!-- Trigger/Open The Modal -->
         <div id="bloc-ajout">
-            <a href="#"><button id="bouton-ajout">+</button></a>
+            <button id="bouton-ajout"><a href="#">+</a></button>
         </div>
 
         <!-- The Modal -->
@@ -29,12 +29,18 @@
 
             <!-- Modal content -->
             <div class="modal-content">
-                <span class="close">&times;</span>
+                    <div class="close" id="div-close-modal">&times;</div>
                 {{ form_start (alimentForm) }}
+                <div id="formAjoutAliment">
+                {{ form_row(alimentForm.nom) }}
+
+                {{ form_row(alimentForm.datePeremption) }}
 
                 {{ form_widget(alimentForm) }}
 
                 <button id="validation-ajout" type="submit">Ajouter</button>
+                </div>
+
                 {{ form_end (alimentForm) }}
             </div>
         </div>
@@ -47,7 +53,7 @@
         var modal = document.getElementById("myModal");
 
         // Get the button that opens the modal
-        var btn = document.getElementById("bloc-ajout");
+        var btn = document.getElementById("bouton-ajout");
 
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];

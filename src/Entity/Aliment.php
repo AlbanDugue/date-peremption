@@ -33,6 +33,11 @@ class Aliment
      */
     private $datePeremption;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $archive;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -70,6 +75,18 @@ class Aliment
     public function setDatePeremption(\DateTimeInterface $datePeremption): self
     {
         $this->datePeremption = $datePeremption;
+
+        return $this;
+    }
+
+    public function getArchive(): ?bool
+    {
+        return $this->archive;
+    }
+
+    public function setArchive(bool $archive): self
+    {
+        $this->archive = $archive;
 
         return $this;
     }

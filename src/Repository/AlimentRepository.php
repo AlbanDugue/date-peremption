@@ -47,4 +47,7 @@ class AlimentRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function deleteAliment() {
+
+    }
 }

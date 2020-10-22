@@ -35,12 +35,15 @@ class MainController extends AbstractController
         if ($alimentForm->isSubmitted() && $alimentForm->isValid()) {
 
             $aliment->setProprietaire($proprietaire);
+            $aliment->setArchive(false);
 
             $em->persist($aliment);
             $em->flush();
+
+            return $this->redirectToRoute('home');
         }
 
-        $aliments = $alimentRepository->findBy(["proprietaire"=> !null],['datePeremption'=>'ASC']);
+        $aliments = $alimentRepository->findBy(["archive"=> false],['datePeremption'=>'ASC']);
 
         return $this->render('main/index.html.twig', [
             'controller_name' => 'MainController',
@@ -48,4 +51,24 @@ class MainController extends AbstractController
             'alimentForm' => $alimentForm->createView()
         ]);
     }
+
+    /**
+     * @Route("/supprimer-aliment/{id}", name="delete")
+     * @param int $id
+     */
+    public function deleteAliment(  int $id,
+                                    Request $request,
+                                    EntityManagerInterface $em,
+                                    UserRepository $userRepository,
+                                    AlimentRepository $alimentRepository
+    )
+    {
+        $aliment = $alimentRepository->find($id);
+        $aliment->setArchive(true);
+        $em->persist($aliment);
+        $em->flush();
+
+        return $this->redirectToRoute('home');
+    }
+
 }
