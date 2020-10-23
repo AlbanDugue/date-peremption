@@ -13,13 +13,16 @@
                 <h2>🧃 🥝 🍰 🥑 🍕 🍄</h2>
             </div>
         {% endif %}
+
         {% for aliment in aliments %}
             <article>
                 <div>
                     <p class="date-peremption">{{ aliment.datePeremption|date('d/m/y') }}</p>
                 </div>
                 <div>
-                    <p class="nom-aliment">
+                    <p class="nom-aliment" {% if aliment.datePeremption < date('now -3 day') %}
+                    style="text-decoration: line-through"
+                            {% endif %}>
                         {% if aliment.datePeremption < date('now -3 day') %}
                             ☠
                         {% endif %}
@@ -60,7 +63,7 @@
 
                 {{ form_widget(alimentForm) }}
 
-                <button id="validation-ajout" type="submit">Ajouter</button>
+                    <button id="validation-ajout" type="submit">Ajouter</button>
                 </div>
 
                 {{ form_end (alimentForm) }}

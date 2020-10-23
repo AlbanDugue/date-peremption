@@ -278,6 +278,8 @@ article:hover {
     font-weight: bold;
 }
 
+
+
 #validation-ajout:hover {
     color: #78e08f;
     background-color: white;
@@ -370,6 +372,18 @@ article:hover {
     background-color: #78e08f;
     font-weight: bold;
     margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    #formAjoutAliment input {
+        font-size: 2rem;
+        width: 21rem;
+        height: 3rem;
+    }
+
+    #formAjoutAliment label {
+        font-size: 2rem;
+    }
 }
 
 #formAjoutAliment input:hover, .block-form input:focus {

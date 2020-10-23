@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\AlimentRepository;
+use App\Repository\AlimentArchiveRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=AlimentRepository::class)
+ * @ORM\Entity(repositoryClass=AlimentArchiveRepository::class)
  */
-class Aliment
+class AlimentArchive
 {
     /**
      * @ORM\Id
@@ -32,7 +32,6 @@ class Aliment
      * @ORM\Column(type="date")
      */
     private $datePeremption;
-
 
     public function getId(): ?int
     {

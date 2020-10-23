@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Aliment;
+use App\Entity\AlimentArchive;
 use App\Form\AlimentType;
+use App\Repository\AlimentArchiveRepository;
 use App\Repository\AlimentRepository;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -35,7 +37,6 @@ class MainController extends AbstractController
         if ($alimentForm->isSubmitted() && $alimentForm->isValid()) {
 
             $aliment->setProprietaire($proprietaire);
-            $aliment->setArchive(false);
 
             $em->persist($aliment);
             $em->flush();
@@ -43,11 +44,12 @@ class MainController extends AbstractController
             return $this->redirectToRoute('home');
         }
 
-        $aliments = $alimentRepository->findBy(["archive"=> false],['datePeremption'=>'ASC']);
+        $aliments = $alimentRepository->findBy(["proprietaire" => !null],['datePeremption'=>'ASC']);
 
         return $this->render('main/index.html.twig', [
             'controller_name' => 'MainController',
             "aliments"=>$aliments,
+            "user"=>$proprietaire,
             'alimentForm' => $alimentForm->createView()
         ]);
     }
@@ -60,12 +62,29 @@ class MainController extends AbstractController
                                     Request $request,
                                     EntityManagerInterface $em,
                                     UserRepository $userRepository,
-                                    AlimentRepository $alimentRepository
+                                    AlimentRepository $alimentRepository,
+                                    AlimentArchiveRepository $alimentArchiveRepository
     )
     {
+
+
         $aliment = $alimentRepository->find($id);
-        $aliment->setArchive(true);
-        $em->persist($aliment);
+
+        $proprietaire = $this->getUser();
+        $nom = $aliment->getNom();
+        $datePeremption = $aliment->getDatePeremption();
+
+        var_dump($nom);
+
+        $alimentArchive = new AlimentArchive();
+        $alimentArchive->setProprietaire($proprietaire);
+        $alimentArchive->setNom($nom);
+        $alimentArchive->setDatePeremption($datePeremption);
+
+        $em->persist($alimentArchive);
+        $em->flush();
+
+        $em->remove($aliment);
         $em->flush();
 
         return $this->redirectToRoute('home');
