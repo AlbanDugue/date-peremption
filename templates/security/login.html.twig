@@ -8,10 +8,10 @@
         <form id="formLogin" method="post">
 
             {# Si l'utilisateur est déja connecté alors une div informative est affichée #}
-            {# @TODO modifier la div qui signale que l'utilisateur est déjà connecté #}
             {% if app.user %}
-                <div class="mb-3">
-                    <p>Vous êtes déjà connecté en tant que {{ app.user.username }}</p> <a href="{{ path('app_logout') }}">Se déconnecter</a>
+                <div id="already-login">
+                    <h4>Vous êtes déjà connecté en tant que <span>{{ app.user.username }}</span></h4>
+                    <p><a href="{{ path('app_logout') }}">Se déconnecter ?</a></p>
                 </div>
             {% endif %}
 
@@ -39,7 +39,6 @@
             </label>
 
             {# Si il y a une erreur sur le formulaire alors cette div est affichée #}
-            {# @TODO modifier l'emplacement de la div erreur #}
             {% if error %}
                 <div class="erreur-form">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
             {% endif %}
