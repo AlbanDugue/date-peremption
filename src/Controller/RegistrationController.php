@@ -19,14 +19,19 @@ class RegistrationController extends AbstractController
      */
     public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder, GuardAuthenticatorHandler $guardHandler, AppAuthenticator $authenticator): Response
     {
+        // L'utilisateur n'a accès à la page que si il n'est pas authentifié sinon il est redirigé sur home
         if ($this->getUser() == !null) {
             return $this->redirectToRoute('home');
         }
 
+        // Initialisation d'un nouvel utilisateur
         $user = new User();
+
+        // Initialisation du formulaire
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
 
+        // Si le formulaire est soumis et valide alors
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the plain password
             $user->setPassword(
@@ -37,6 +42,8 @@ class RegistrationController extends AbstractController
             );
 
             $entityManager = $this->getDoctrine()->getManager();
+
+            // L'utilisateur est ajouter en base de donnée
             $entityManager->persist($user);
             $entityManager->flush();
             // do anything else you need here, like send an email
@@ -49,6 +56,7 @@ class RegistrationController extends AbstractController
             );
         }
 
+        // Dirige l'utilisateur sur la page register et génère le formulaire associé
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form->createView(),
         ]);
