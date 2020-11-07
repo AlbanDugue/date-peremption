@@ -1,34 +1,29 @@
+/********************************************************************************************************************/
+/*___________________________________________________GENERAL________________________________________________________*/
+/********************************************************************************************************************/
+
+/*
+    @Élément: Pour chaque élément
+    @Description :  Border box et pas de marge ni de padding pour les éléments
+ */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/********************/
-/******_BODY_********/
-/********************/
-body {
-    font-family: "Montserrat", sans-serif;
-    min-height:100vh; /* 1 */
-    display:flex; /* 2 */
-    flex-direction:column; /* 3 */
-    background-color: #78e08f;
-    color: white;
-}
-
+/*
+    @Élément: Tout les liens
+    @Description :  Pas de décoration
+ */
 a {
     text-decoration: none;
 }
 
-hr {
-    width: 66%;
-    height: 0.1rem;
-    border: none;
-    outline: none;
-    background-color: white;
-    margin: 1rem 0;
-}
-
+/*
+    @Élément: Div erreur sur un formulaire par défaut
+    @Description :  Stylisation de la div erreur
+ */
 .erreur-form {
     margin-top: 0.5rem;
     background-color: #e55039;
@@ -38,6 +33,18 @@ hr {
     padding: 0.5rem;
 }
 
+/********************************************************************************************************************/
+/*____________________________________________________BODY__________________________________________________________*/
+/********************************************************************************************************************/
+
+/*******************************************************/
+/*______________________HEADER_________________________*/
+/*******************************************************/
+
+/*
+    @Élément: Titre de l'application
+    @Description :  Paramétrage de la typo (famille, texte centré, taille et espace avec les autres éléments)
+ */
 #titre {
     font-family: 'Caveat', cursive;
     text-align: center;
@@ -45,17 +52,58 @@ hr {
     padding: 5rem 0 3rem 0;
 }
 
-/********************/
-/******_MAIN_********/
-/********************/
+/*
+    @Élément: Corps de la page HTML
+    @Description :  - Définis une typographie par défaut
+                    - Couleur de la typographie par défaut en blanc
+                    - Fond d'écran vert pour le fond du site
+                    - Mise en place du display flex pour avoir un footer responsive
+ */
+body {
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    background-color: #78e08f;
+    min-height:100vh; /* 1 */
+    display:flex; /* 2 */
+    flex-direction:column; /* 3 */
+
+}
+
+/*******************************************************/
+/*______________________MAIN___________________________*/
+/*******************************************************/
+
+/*
+    @Élément: Bloc main dans le body (entre le header et le footer)
+    @Description :  Fin de la mise en place du flex sur le body avec padding
+ */
 main {
     flex-grow:1; /* 4 */
     padding: 2rem 1rem;
 }
 
-/********************/
-/******_FOOTER_******/
-/********************/
+/*
+    @Élément: Ligne pour délimiter le corps du body avec le footer
+    @Description :  Définition du style de la ligne, avec sa marge
+ */
+hr {
+    width: 66%;
+    height: 0.1rem;
+    border: none;
+    outline: none;
+    background-color: white;
+    margin: 1rem 0;
+}
+
+/*******************************************************/
+/*______________________FOOTER_________________________*/
+/*******************************************************/
+
+/*
+    @Élément: Footer du body
+    @Description :  - Mise en place du display flex
+                    - Texte centré
+ */
 footer {
     text-align: center;
     padding-bottom: 1rem;
@@ -65,9 +113,14 @@ footer {
     align-items: center;
 }
 
-/********************/
-/***_PAGE_LOGIN_*****/
-/********************/
+/********************************************************************************************************************/
+/*________________________________________________PAGE LOGIN________________________________________________________*/
+/********************************************************************************************************************/
+
+/*
+    @Élément: formulaire de connexion qui encapsule tout les éléments du block main de la page login
+    @Description :  - Mise en place du display flex
+ */
 #formLogin {
     display: flex;
     flex-direction: column;
@@ -75,11 +128,24 @@ footer {
     align-items: center;
 }
 
+/*
+    @Élément: Text H2 présent dans le formulaire de connexion
+    @Description :  - Taille de typo et marge en bas
+ */
 #formLogin h2 {
     font-size: 2.5rem;
     padding-bottom: 1rem;
 }
 
+/*******************************************************/
+/*____________________BLOCK FORM_______________________*/
+/*******************************************************/
+
+/*
+    @Élément: Div container qui met en form un bloc Label/Input pour un élément
+    @Description :  - Mise en place du display flex
+                    - Marge basse
+ */
 .block-form {
     display: flex;
     flex-direction: column;
@@ -87,12 +153,22 @@ footer {
     margin-bottom: 1rem;
 }
 
+/*
+    @Élément: Défini le style d'un label dans le block-form
+    @Description :  - Marge basse
+                    - Stylisation de la typo
+ */
 .block-form label {
     margin-bottom: 0.3rem;
     font-weight: bold;
     font-size: 1.2rem;
 }
 
+/*
+    @Élément: Défini le style d'un input dans le block-form
+    @Description :  - Taille et stylisation de l'input
+                    - Stylisation de la typo
+ */
 .block-form input {
     width: 14rem;
     height: 2rem;
@@ -105,12 +181,23 @@ footer {
     font-weight: bold;
 }
 
-.block-form input:hover, .block-form input:focus {
+/*
+    @Élément: Défini le style d'un input lorsqu'il est hover ou focus
+    @Description :  - Changement stylisation typo et bordure
+ */
+.block-form input:hover,
+.block-form input:focus {
     color: white;
     background-color: #78e08f;
     border: solid 0.2rem white;
 }
 
+/*
+    @Élément: Bouton se connecter
+    @Description :  - Stylisation du bouton
+                    - Stylisation de la typo
+                    - Définition des marges extrerne et interne
+ */
 #bouton-login {
     padding: 0.5rem;
     color: #78e08f;
@@ -123,15 +210,25 @@ footer {
     margin: 1rem 0;
 }
 
+/*
+    @Élément: Bouton se connecter lorsqu'il est survolé (hover)
+    @Description :  - Changement style typo
+                    - Changement style input
+ */
 #bouton-login:hover {
     color: white;
     background-color: #78e08f;
     border: solid 0.2rem white;
 }
 
-/********************/
-/****_PAGE_HOME_*****/
-/********************/
+/********************************************************************************************************************/
+/*_________________________________________________PAGE HOME________________________________________________________*/
+/********************************************************************************************************************/
+
+/*
+    @Élément: Container qui encapsule tout les éléments du block main de la page home
+    @Description :  - Mise en place du display flex
+ */
 #container-liste {
     display: flex;
     flex-direction: column;
@@ -139,6 +236,10 @@ footer {
     align-items: center;
 }
 
+/*
+    @Élément: Bloc qui affiche une div si l'utilisateur n'a pas d'aliments
+    @Description :  - Mise en place du display flex
+ */
 #pas-aliments {
     display: flex;
     flex-direction: column;
@@ -146,10 +247,25 @@ footer {
     align-items: center;
 }
 
+/*
+    @Élément: Texte h2 du bloc pas-aliments
+    @Description :  margin sur le texte
+ */
 #pas-aliments h2 {
     margin: 0.5rem 0;
 }
 
+/*******************************************************/
+/*______________________ARTICLE________________________*/
+/*******************************************************/
+
+/* TODO faire une animation pour afficher les articles un à un */
+
+/*
+    @Élément: Article regroupant sur une ligne les détails liés à un aliment
+    @Description :  - Mise en place du display flex
+                    - Taille, style et marge d'un article
+ */
 article {
     display: flex;
     flex-direction: row;
@@ -161,10 +277,18 @@ article {
     border-radius: 2rem;
 }
 
+/*
+    @Élément: Article lorsqu'il est survolé
+    @Description :  - Changement de couleur du fond
+ */
 article:hover {
     background-color: #b8e994;
 }
 
+/*
+    @Élément: Media Queries lorsqu'on est plus en mobile
+    @Description :  Modification de la taille d'article
+ */
 @media screen and (min-width: 600px) {
     article {
         margin-bottom: 1.5rem;
@@ -173,47 +297,83 @@ article:hover {
     }
 }
 
+/*
+    @Élément: Class pour stylisé la date de péremption dans l'article
+    @Description :  Taille du bloc et style sur la typo
+ */
 .date-peremption {
     flex: 1;
     font-weight: bold;
 }
 
+/*
+    @Élément: Class pour stylisé le nom d'aliment dans l'article
+    @Description :  Taille et marge du bloc
+ */
 .nom-aliment {
     flex: 2;
     text-align: center;
     padding: 0 1rem;
 }
 
+/*
+    @Élément: Class pour stylisé le bouton supprimer dans l'article
+    @Description :  - Stylisation du texte
+                    - Stylisation du block
+                    - Mise en place du display flex
+ */
 .bouton-suppr {
-    padding: 1rem;
-    background-color: white;
-    color: #78e08f;
-    border-radius: 50%;
-    outline: none;
-    border: none;
-    height: 2.5rem;
-    width: 2.5rem;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    color: #78e08f;
     font-size: 2.5rem;
     font-weight: bold;
 }
 
+/*
+    @Élément: Sélectionne bouton supprimé lorsqu'il est survolé
+    @Description :  - Définition de la couleur du lien et stylisation d'une bordure
+ */
+.bouton-suppr:hover {
+    background-color: #78e08f;
+    border: solid 0.2rem white;
+    cursor: pointer;
+}
+
+/*
+    @Élément: Sélectionne le lien dans le bouton supprimé
+    @Description :  - Définition de la couleur du lien
+ */
 .bouton-suppr a {
     color: #78e08f;
 }
 
+/*
+    @Élément: Sélectionne le lien dans le bouton supprimé lorsqu'il est survolé
+    @Description :  - Définition de la couleur du lien
+ */
 .bouton-suppr:hover a {
     color: white;
 }
 
-.bouton-suppr:hover {
-    background-color: #78e08f;
-    border: solid 0.2rem white;
-}
+/*******************************************************/
+/*___________________BOUTON AJOUT______________________*/
+/*******************************************************/
 
+/*
+    @Élément: Container du bouton ajout aliment
+    @Description :  - Mise en place du display flex
+                    - Taille et marge du container
+ */
 #bloc-ajout {
     display: flex;
     flex-direction: column;
@@ -223,69 +383,82 @@ article:hover {
     padding: 1rem 0.5rem;
 }
 
+/*
+    @Élément: Media Queries lorsqu'on est plus en mobile
+    @Description :  - Taille du bloc
+ */
 @media screen and (min-width: 600px) {
     #bloc-ajout  {
         width: 50%;
     }
 }
 
+/*
+    @Élément: Bouton pour ouvrir la modale pour ajouter un aliment
+    @Description :  - Taille et marge du bouton
+                    - Mise en place du display flex
+                    - Style du bouton
+                    - Style de la typo (croix)
+ */
 #bouton-ajout {
-    padding: 1rem;
-    background-color: #b8e994;
-    color: white;
-    border-radius: 50%;
-    outline: none;
-    border: solid 0.2rem white;
     height: 3.5rem;
     width: 3.5rem;
+    padding: 1rem;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    background-color: #b8e994;
+    border-radius: 50%;
+    outline: none;
+    border: solid 0.2rem white;
+    color: white;
     font-weight: bold;
     font-size: 3rem;
 }
 
+/*
+    @Élément: Sélectionne bouton ajouter lorsqu'il est survolé
+    @Description :  - Définition de la couleur du lien et stylisation d'une bordure
+ */
+#bouton-ajout:hover {
+    background-color: white;
+    border: solid 0.2rem #b8e994;
+    cursor: pointer;
+}
+
+/*
+    @Élément: Sélectionne le lien dans le bouton supprimé
+    @Description :  - Définition de la couleur du lien
+ */
 #bouton-ajout a {
     color: white;
 }
 
+/*
+    @Élément: Sélectionne le lien dans le bouton ajouter lorsqu'il est survolé
+    @Description :  - Définition de la couleur du lien
+ */
 #bouton-ajout a:hover {
     color: #b8e994;
 }
 
-#bouton-ajout:hover {
-    background-color: white;
-    border: solid 0.2rem #b8e994;
-}
+/********************************************************************************************************************/
+/*____________________________________________MODAL AJOUT ALIMENT___________________________________________________*/
+/********************************************************************************************************************/
 
-/********************/
-/**_AJOUT_ALIMENT_***/
-/********************/
+/*******************************************************/
+/*______________________MODALE_________________________*/
+/*******************************************************/
 
-#validation-ajout {
-    padding: 0.7rem 1rem;
-    background-color: #78e08f;
-    color: white;
-    border-radius: 2rem;
-    outline: none;
-    border: solid 0.2rem white;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-
-
-#validation-ajout:hover {
-    color: #78e08f;
-    background-color: white;
-    border: solid 0.2rem #78e08f;
-}
-
+/*
+    @Élément: Container de la modale entière
+    @Description :  - N'apparait pas par défaut
+                    - Reste sur place
+                    - Tout au dessus en terme d'index
+                    - Définition de la taille et marge (plein écran)
+                    - Fond noir opacité pour trancher avec l'arrière plan
+ */
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -301,31 +474,56 @@ article:hover {
 
 }
 
-/* Modal Content */
+/*
+    @Élément: Container dans lequel se place le contenu de la modal
+    @Description :  - Mise en place du display flex
+                    - Stylisation de la div
+                    - Taille et marge de la div
+ */
 .modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    width: 80%;
-    color: #78e08f;
-    border-radius: 1rem;
     display: flex;
     flex-direction: column;
+    background-color: #fefefe;
+    color: #78e08f;
+    border-radius: 1rem;
+    margin: auto;
+    width: 80%;
 }
 
+/*
+    @Élément: Media queries sur le contenu de la modale lorsqu'on est plus en mobile
+    @Description :  - Taille de la div
+ */
 @media screen and (min-width: 600px) {
     .modal-content {
         width: 50%;
     }
 }
 
-/* The Close Button */
+/*******************************************************/
+/*___________________CLOSE MODALE______________________*/
+/*******************************************************/
+
+/*
+    @Élément: Div pour fermer la modale
+    @Description :  - Placement et style du texte
+                    - Mise en place du display flex
+ */
 .close {
     color: #78e08f;
     float: right;
     font-weight: bold;
     margin-right: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 3rem;
 }
 
+/*
+    @Élément: Sélectionne la div close en hover ou focus
+    @Description :  - Changement couleur de la typo
+                    - Changement de style sur le curseur
+ */
 .close:hover,
 .close:focus {
     color: #079992;
@@ -333,12 +531,15 @@ article:hover {
     cursor: pointer;
 }
 
-#div-close-modal {
-    display: flex;
-    justify-content: flex-end;
-    font-size: 3rem;
-}
+/*******************************************************/
+/*_____________________FORM AJOUT______________________*/
+/*******************************************************/
 
+/*
+    @Élément: Container qui englobe tout le formulaire d'ajout d'aliment
+    @Description :  - Mise en place du display flex
+                    - Marge interne
+ */
 #formAjoutAliment {
     display: flex;
     flex-direction: column;
@@ -347,6 +548,10 @@ article:hover {
     padding: 0 1rem 1rem 1rem;
 }
 
+/*
+    @Élément: Container qui englobe les éléments label et input dans un block
+    @Description :  - Mise en place du display flex
+ */
 #formAjoutAliment div{
     display: flex;
     flex-direction: column;
@@ -354,15 +559,25 @@ article:hover {
     align-items: center;
 }
 
+/*
+    @Élément: Label dans le formulaire d'ajout d'aliment
+    @Description :  - Stylisation du texte et marge
+ */
 #formAjoutAliment label {
     margin-bottom: 0.3rem;
     font-weight: bold;
     font-size: 1.2rem;
 }
 
+/*
+    @Élément: Input dans le formulaire d'ajout d'aliment
+    @Description :  - Stylisation du texte
+                    - Stylisation et marge de lélément
+ */
 #formAjoutAliment input {
     width: 14rem;
     height: 2rem;
+    margin-bottom: 1rem;
     border-radius: 0.5rem;
     outline: none;
     border: none;
@@ -371,9 +586,13 @@ article:hover {
     color: white;
     background-color: #78e08f;
     font-weight: bold;
-    margin-bottom: 1rem;
 }
 
+/*
+    @Élément: Media queries pour les label et input lorsqu'on est plus en mobile
+    @Description :  - Taille de la typo
+                    - Taille de l'input
+ */
 @media screen and (min-width: 600px) {
     #formAjoutAliment input {
         font-size: 2rem;
@@ -386,8 +605,47 @@ article:hover {
     }
 }
 
-#formAjoutAliment input:hover, .block-form input:focus {
+/*
+    @Élément: Sélectionne l'input lorsqu'il est focus ou hover
+    @Description :  - Stylisation de l'input
+ */
+#formAjoutAliment input:hover,
+#formAjoutAliment input:focus {
     color: #78e08f;
     background-color: white;
     border: solid 0.2rem #78e08f;
+}
+
+/*
+    @Élément: Bouton qui soumet et ajoute un aliment
+    @Description :  - Mise en place du displey flex
+                    - Marge et stylisation du bouton
+                    - Stylisation du texte
+ */
+#validation-ajout {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem 1rem;
+    background-color: #78e08f;
+    color: white;
+    border-radius: 2rem;
+    outline: none;
+    border: solid 0.2rem white;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/*
+    @Élément: Sélectionne le bouton lorsqu'il est survolé
+    @Description :  - Changement de couleur du texte
+                    - Changement de style du bouton
+                    - Curseur pointeur
+ */
+#validation-ajout:hover {
+    color: #78e08f;
+    background-color: white;
+    border: solid 0.2rem #78e08f;
+    cursor: pointer;
 }

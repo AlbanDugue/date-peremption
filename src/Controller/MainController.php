@@ -29,6 +29,8 @@ class MainController extends AbstractController
 
         $proprietaire = $this->getUser();
 
+
+
         $aliment = new Aliment();
         $alimentForm = $this->createForm(AlimentType::class, $aliment);
 
@@ -44,7 +46,7 @@ class MainController extends AbstractController
             return $this->redirectToRoute('home');
         }
 
-        $aliments = $alimentRepository->findBy(["proprietaire" => !null],['datePeremption'=>'ASC']);
+        $aliments = $alimentRepository->findBy(["proprietaire" => $this->getUser()->getId()],['datePeremption'=>'ASC']);
 
         return $this->render('main/index.html.twig', [
             'controller_name' => 'MainController',
@@ -70,11 +72,9 @@ class MainController extends AbstractController
 
         $aliment = $alimentRepository->find($id);
 
-        $proprietaire = $this->getUser();
+        $proprietaire = $aliment->getProprietaire();
         $nom = $aliment->getNom();
         $datePeremption = $aliment->getDatePeremption();
-
-        var_dump($nom);
 
         $alimentArchive = new AlimentArchive();
         $alimentArchive->setProprietaire($proprietaire);

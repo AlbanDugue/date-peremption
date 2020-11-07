@@ -4,9 +4,11 @@
 
 {% block main %}
         <form id="formLogin" method="post">
+
+            {# @TODO modifier la div qui signale que l'utilisateur est déjà connecté #}
             {% if app.user %}
                 <div class="mb-3">
-                    You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+                    <p>Vous êtes déjà connecté en tant que {{ app.user.username }}</p> <a href="{{ path('app_logout') }}">Se déconnecter</a>
                 </div>
             {% endif %}
 
@@ -27,11 +29,12 @@
                 <input type="checkbox" name="_remember_me"> Se souvenir de moi
             </label>
 
+            {# @TODO modifier l'emplacement de la div erreur #}
             {% if error %}
                 <div class="erreur-form">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
             {% endif %}
 
-
+            {# @TODO changement pour qu'on voit une main lors du hover sur le bouton #}
             <button id="bouton-login" type="submit">
                 Se connecter
             </button>

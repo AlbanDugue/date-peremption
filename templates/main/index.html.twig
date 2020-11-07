@@ -23,18 +23,12 @@
                     <p class="nom-aliment" {% if aliment.datePeremption < date('now -3 day') %}
                     style="text-decoration: line-through"
                             {% endif %}>
-                        {% if aliment.datePeremption < date('now -3 day') %}
-                            ☠
-                        {% endif %}
                         {{ aliment.nom }}
                         {% if aliment.datePeremption < date('now') and aliment.datePeremption > date('now -3 day') %}
                             🔥
                         {% endif %}
                         {% if aliment.datePeremption < date('now + 2 day') and aliment.datePeremption > date('now') %}
                             ⏳
-                        {% endif %}
-                        {% if aliment.datePeremption < date('now -3 day') %}
-                            ☠
                         {% endif %}
                     </p>
                 </div>
@@ -54,6 +48,8 @@
 
             <!-- Modal content -->
             <div class="modal-content">
+
+                    {# TODO regarder taille de div pour garder une taille que sur la croix (hover) #}
                     <div class="close" id="div-close-modal">&times;</div>
                 {{ form_start (alimentForm) }}
                 <div id="formAjoutAliment">
@@ -63,6 +59,7 @@
 
                 {{ form_widget(alimentForm) }}
 
+                    {# TODO changer le bouton pour qu'au survol une main apparaisse #}
                     <button id="validation-ajout" type="submit">Ajouter</button>
                 </div>
 
