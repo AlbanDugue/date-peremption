@@ -3,8 +3,11 @@
 {% block title %}Se connecter {{ parent() }}{% endblock %}
 
 {% block main %}
+
+        {# Début du formulaire de connexion #}
         <form id="formLogin" method="post">
 
+            {# Si l'utilisateur est déja connecté alors une div informative est affichée #}
             {# @TODO modifier la div qui signale que l'utilisateur est déjà connecté #}
             {% if app.user %}
                 <div class="mb-3">
@@ -12,11 +15,16 @@
                 </div>
             {% endif %}
 
+            {# Titre de la page se connecter #}
             <h2>Se connecter</h2>
+
+            {# Block Email #}
             <div class="block-form">
                 <label for="inputEmail">Email</label>
                 <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
             </div>
+
+            {# Block Mot de passe #}
             <div class="block-form">
                 <label for="inputPassword">Mot de passe</label>
                 <input type="password" name="password" id="inputPassword" class="form-control" required>
@@ -25,16 +33,18 @@
             <input type="hidden" name="_csrf_token"
                    value="{{ csrf_token('authenticate') }}"
             >
+            {# Se souvenir de moi #}
             <label>
                 <input type="checkbox" name="_remember_me"> Se souvenir de moi
             </label>
 
+            {# Si il y a une erreur sur le formulaire alors cette div est affichée #}
             {# @TODO modifier l'emplacement de la div erreur #}
             {% if error %}
                 <div class="erreur-form">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
             {% endif %}
 
-            {# @TODO changement pour qu'on voit une main lors du hover sur le bouton #}
+            {# Bouton qui sert à la connexion et redirige sur la page home #}
             <button id="bouton-login" type="submit">
                 Se connecter
             </button>

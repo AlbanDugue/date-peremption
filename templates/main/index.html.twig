@@ -4,8 +4,12 @@
 
 {% block main %}
 
+     {# Container global de la page #}
     <div id="container-liste">
+
+        {# Condition si il n'y a pas d'aliments liés à un utilisateur #}
         {% if not aliments %}
+            {# Alors on affiche une div informative pour dire d'ajouter un aliment #}
             <div id="pas-aliments">
                 <h2>🥑 🍕 🍄 🧃 🥝 🍰</h2>
                 <h2> Aucuns aliments 😁</h2>
@@ -14,43 +18,60 @@
             </div>
         {% endif %}
 
+        {# Boucle pour chaque aliment récupérer par utilisateur #}
         {% for aliment in aliments %}
+            {# affichage de données concernant un aliment avec une action liée #}
             <article>
+                {# Bloc lié à sa date de péremption au format jour/mois/année de la plus ancienne à la plus récente #}
                 <div>
                     <p class="date-peremption">{{ aliment.datePeremption|date('d/m/y') }}</p>
                 </div>
+
+                {# Bloc lié au nom de l'aliment  #}
                 <div>
+                    {# Condition si l'aliment est périmé depuis plus de 3 jours alors il est barré #}
                     <p class="nom-aliment" {% if aliment.datePeremption < date('now -3 day') %}
-                    style="text-decoration: line-through"
-                            {% endif %}>
+                                                style="text-decoration: line-through"
+                                            {% endif %}>
+                        {# Affichage du nom de l'aliment #}
                         {{ aliment.nom }}
+                        {# Condition si l'aliment est périmé depuis moins de 3 jours  #}
                         {% if aliment.datePeremption < date('now') and aliment.datePeremption > date('now -3 day') %}
+                            {# Affichage d'un emoji flamme collé au nom de l'aliment #}
                             🔥
                         {% endif %}
+                        {# Condition si l'aliment est périmé dans 2 jours ou moins  #}
                         {% if aliment.datePeremption < date('now + 2 day') and aliment.datePeremption > date('now') %}
+                            {# Affichage d'un emoji sablier collé au nom de l'aliment #}
                             ⏳
                         {% endif %}
                     </p>
                 </div>
+
+                {# Bloc lié à l'action de supprimé l'aliment  #}
                 <div>
+                    {# Appel de la fonction supprimé aliment dans le MainController en passant son id en paramètre #}
                     <button class="bouton-suppr"><a href="{{ path('delete', {'id': aliment.id}) }}">&times;</a></button>
                 </div>
             </article>
         {% endfor %}
 
-        <!-- Trigger/Open The Modal -->
+        {# Trigger qui ouvre la modal (voir javascript ci-dessous) #}
         <div id="bloc-ajout">
             <button id="bouton-ajout"><a href="#">+</a></button>
         </div>
 
-        <!-- The Modal -->
+        {# Modal global #}
         <div id="myModal" class="modal">
 
-            <!-- Modal content -->
+            {# Contenu dans la modal #}
             <div class="modal-content">
 
-                    {# TODO regarder taille de div pour garder une taille que sur la croix (hover) #}
-                    <div class="close" id="div-close-modal">&times;</div>
+                {# TODO regarder taille de div pour garder une taille que sur la croix (hover) #}
+                {# Div pour fermer la modale #}
+                <div class="close" id="div-close-modal">&times;</div>
+
+                {# Début du formualaire d'ajout d'aliment #}
                 {{ form_start (alimentForm) }}
                 <div id="formAjoutAliment">
                 {{ form_row(alimentForm.nom) }}
@@ -59,6 +80,7 @@
 
                 {{ form_widget(alimentForm) }}
 
+                    {# Bouton submit pour ajouter un aliment en base et revenir sur la page home #}
                     {# TODO changer le bouton pour qu'au survol une main apparaisse #}
                     <button id="validation-ajout" type="submit">Ajouter</button>
                 </div>

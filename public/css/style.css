@@ -219,6 +219,7 @@ footer {
     color: white;
     background-color: #78e08f;
     border: solid 0.2rem white;
+    cursor: pointer;
 }
 
 /********************************************************************************************************************/
@@ -260,7 +261,7 @@ footer {
 /*******************************************************/
 
 /* TODO faire une animation pour afficher les articles un à un */
-
+/* TODO article hover afficher un peu plus gros l'aliment ? */
 /*
     @Élément: Article regroupant sur une ligne les détails liés à un aliment
     @Description :  - Mise en place du display flex
@@ -474,6 +475,8 @@ article:hover {
 
 }
 
+
+/* TODO animation pour l'affichage de la modale */
 /*
     @Élément: Container dans lequel se place le contenu de la modal
     @Description :  - Mise en place du display flex
@@ -519,6 +522,8 @@ article:hover {
     font-size: 3rem;
 }
 
+
+/* TODO croix un peu plus grosse sur le hover (animation) */
 /*
     @Élément: Sélectionne la div close en hover ou focus
     @Description :  - Changement couleur de la typo
