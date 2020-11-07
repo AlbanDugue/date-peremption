@@ -67,9 +67,8 @@
             {# Contenu dans la modal #}
             <div class="modal-content">
 
-                {# TODO regarder taille de div pour garder une taille que sur la croix (hover) #}
                 {# Div pour fermer la modale #}
-                <div class="close" id="div-close-modal">&times;</div>
+                <div class="close"><p>&times;</p></div>
 
                 {# Début du formualaire d'ajout d'aliment #}
                 {{ form_start (alimentForm) }}
@@ -81,7 +80,6 @@
                 {{ form_widget(alimentForm) }}
 
                     {# Bouton submit pour ajouter un aliment en base et revenir sur la page home #}
-                    {# TODO changer le bouton pour qu'au survol une main apparaisse #}
                     <button id="validation-ajout" type="submit">Ajouter</button>
                 </div>
 
