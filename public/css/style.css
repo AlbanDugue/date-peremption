@@ -723,5 +723,119 @@ article:hover {
 
 
 /********************************************************************************************************************/
-/*____________________________________________!!!!!TEST !!!!!!!!!___________________________________________________*/
+/*__________________________________________________PAGE REGISTER___________________________________________________*/
 /********************************************************************************************************************/
+
+/*
+    @Élément: formulaire d'enregistrement qui encapsule tout les éléments du block main de la page login
+    @Description :  - Mise en place du display flex
+ */
+#registerForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*
+    @Élément: Text H2 présent dans le formulaire de création de compte
+    @Description :  - Taille de typo et marge en bas
+ */
+#registerForm h2 {
+    font-size: 2.3rem;
+    padding-bottom: 1rem;
+}
+
+/*
+    @Élément: Bouton se connecter
+    @Description :  - Stylisation du bouton
+                    - Stylisation de la typo
+                    - Définition des marges extrerne et interne
+ */
+#bouton-register {
+    padding: 0.5rem;
+    color: #78e08f;
+    background-color: white;
+    border-radius: 0.5rem;
+    outline: none;
+    border: none;
+    font-weight: bold;
+    font-size: larger;
+    margin: 1rem 0;
+}
+
+/*
+    @Élément: Bouton se connecter lorsqu'il est survolé (hover)
+    @Description :  - Changement style typo
+                    - Changement style input
+ */
+#bouton-register:hover {
+    color: white;
+    background-color: #78e08f;
+    border: solid 0.2rem white;
+    cursor: pointer;
+}
+
+/*
+    @Élément: Div container qui met en forme le formulaire
+    @Description :  - Mise en place du display flex
+                    - Marge basse
+ */
+#formCreaCompte {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+/*
+    @Élément: Div container qui met en form un bloc Label/Input pour un élément
+    @Description :  - Mise en place du display flex
+                    - Marge basse
+ */
+#formCreaCompte div {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-bottom: 1rem;
+}
+
+/*
+    @Élément: Défini le style d'un label dans le block-form
+    @Description :  - Marge basse
+                    - Stylisation de la typo
+ */
+#formCreaCompte div label {
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/*
+    @Élément: Défini le style d'un input dans le block-form
+    @Description :  - Taille et stylisation de l'input
+                    - Stylisation de la typo
+ */
+#formCreaCompte div input {
+    width: 14rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    outline: none;
+    border: none;
+    text-align: center;
+    font-size: 1rem;
+    color: #78e08f;
+    font-weight: bold;
+}
+
+/*
+    @Élément: Défini le style d'un input lorsqu'il est hover ou focus
+    @Description :  - Changement stylisation typo et bordure
+ */
+#formCreaCompte div input:hover,
+#formCreaCompte div input:focus {
+    color: white;
+    background-color: #78e08f;
+    border: solid 0.2rem white;
+}
