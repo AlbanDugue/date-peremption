@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Créer un compte {{ parent() }}{% endblock %}
+{% block title %}S'inscrire {{ parent() }}{% endblock %}
 
 {% block main %}
 
@@ -12,7 +12,7 @@
                 <div class="alert alert-danger" role="alert">{{ flashError }}</div>
             {% endfor %}
 
-            <h2>Créer un compte</h2>
+            <h2>S'inscrire</h2>
                 {{ form_row(registrationForm.email) }}
                 {{ form_row(registrationForm.username, {
                     label: 'Pseudo'

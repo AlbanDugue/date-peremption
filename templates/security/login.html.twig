@@ -7,8 +7,6 @@
         {# Début du formulaire de connexion #}
         <form id="formLogin" method="post">
 
-            {# TODO Créer bouton créer un compte #}
-
             {# Si l'utilisateur est déja connecté alors une div informative est affichée #}
             {% if app.user %}
                 <div id="already-login">
@@ -49,5 +47,14 @@
             <button id="bouton-login" type="submit">
                 Se connecter
             </button>
+
+            {# Propose à l'utilisateur de s'inscrire si celui ci n'est pas connecté et n'a pas de compte #}
+            {% if app.user == null %}
+                <div id="already-login">
+                    <h4>Tu n'as pas de compte, <span>inscris-toi ?</span></h4>
+                    <p><a href="{{ path('app_register')}}">S'inscrire</a></p>
+                </div>
+            {% endif %}
+
         </form>
 {% endblock %}

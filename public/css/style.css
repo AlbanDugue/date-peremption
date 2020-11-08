@@ -20,6 +20,10 @@ a {
     text-decoration: none;
 }
 
+li {
+    list-style: none;
+}
+
 /*
     @Élément: Div erreur sur un formulaire par défaut
     @Description :  Stylisation de la div erreur
@@ -42,6 +46,63 @@ a {
 /*******************************************************/
 
 /*
+    @Élément: Nav, barre de navigation de l'appli
+    @Description :  - Mise en place du display flex et marge
+ */
+#menu-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 1rem;
+}
+
+/*
+    @Élément: Lien dans le menu de l'app
+    @Description :  - Couleur blanche sur les liens
+ */
+#menu-header a {
+    color: white;
+}
+
+/*
+    @Élément: Sélectionne au survol le lien dans le menu de l'app
+    @Description :  - Change la couleur en vert foncé
+ */
+#menu-header a:hover {
+    color: #079992;
+}
+
+/*
+    @Élément: Un élément li de la barre de menu
+    @Description :  - Mise en place du display flex
+ */
+#menu-header li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*
+    @Élément: Sélectionne un élément li de la barre de menu au survol
+    @Description :  - Animation de grossissement
+ */
+#menu-header li:hover {
+    transition: transform .2s;
+    transform: scale(1.2);
+}
+
+/*
+    @Élément: Picto font awesome dans la barre de menu de l'appli
+    @Description :  - Taille et marge de la typo
+ */
+#menu-header i {
+    font-size: 2rem;
+    margin: 0.3rem;
+}
+
+/*
     @Élément: Titre de l'application
     @Description :  Paramétrage de la typo (famille, texte centré, taille et espace avec les autres éléments)
  */
@@ -49,7 +110,7 @@ a {
     font-family: 'Caveat', cursive;
     text-align: center;
     font-size: 4.5rem;
-    padding: 5rem 0 3rem 0;
+    padding: 3rem 0;
 }
 
 /*
@@ -742,7 +803,7 @@ article:hover {
     @Description :  - Taille de typo et marge en bas
  */
 #registerForm h2 {
-    font-size: 2.3rem;
+    font-size: 2.5rem;
     padding-bottom: 1rem;
 }
 
