@@ -161,7 +161,7 @@ class __TwigTemplate_f903aa05660bf84aa695c2b6a8ebe8fc6fda1375a79019492ae1c52dd4f
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo " | CplusBon.com";
+        echo " | C'plus Bon.com !";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -232,7 +232,7 @@ class __TwigTemplate_f903aa05660bf84aa695c2b6a8ebe8fc6fda1375a79019492ae1c52dd4f
         <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">
 
         {# Block titre générique #}
-        <title>{% block title %} | CplusBon.com{% endblock %}</title>
+        <title>{% block title %} | C'plus Bon.com !{% endblock %}</title>
 
         {# Appel du CSS #}
         <link rel=\"stylesheet\" href=\"{{ asset('css/style.css') }}\">
