@@ -4,6 +4,9 @@
 /var/logs/*
 /var/sessions/*
 /var/log/*
+/var/dev/*
+/var/log/dev.log
+/var/cache/dev/twig/*
 /.env
 /.env.local
 /.env.local.php
