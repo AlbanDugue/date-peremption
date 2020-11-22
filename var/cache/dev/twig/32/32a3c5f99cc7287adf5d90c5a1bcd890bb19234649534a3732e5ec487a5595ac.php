@@ -66,7 +66,7 @@ class __TwigTemplate_3d20e127cfb0685b152ed4273214adca479641b507b36cc938e53eb6cfc
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Le Frigo ";
+        echo "Home ";
         $this->displayParentBlock("title", $context, $blocks);
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -314,7 +314,7 @@ class __TwigTemplate_3d20e127cfb0685b152ed4273214adca479641b507b36cc938e53eb6cfc
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Le Frigo {{ parent() }}{% endblock %}
+{% block title %}Home {{ parent() }}{% endblock %}
 
 {% block main %}
 

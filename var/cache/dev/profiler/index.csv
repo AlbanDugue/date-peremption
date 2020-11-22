@@ -2060,3 +2060,6 @@ d6b71e,::1,GET,http://localhost/PROJET-PERSO/date-peremption/public/,1605878773,
 7f7eee,::1,GET,http://localhost/PROJET-PERSO/date-peremption/public/,1605878775,,200
 850dd9,::1,GET,http://localhost/PROJET-PERSO/date-peremption/public/,1606062380,,302
 4c4491,::1,GET,http://localhost/PROJET-PERSO/date-peremption/public/login,1606062440,,200
+0b4dd6,::1,GET,http://localhost/PROJET-PERSO/date-peremption/public/login,1606063452,,200
+8d3b31,::1,POST,http://localhost/PROJET-PERSO/date-peremption/public/login,1606063477,,302
+aad00a,::1,GET,http://localhost/PROJET-PERSO/date-peremption/public/,1606063483,,200
