@@ -43,12 +43,13 @@
             </nav>
             {% endif %}
 
-            {# Titre de l'application #}
-            <h1 id="titre">C'plus bon !</h1>
+
         </header>
 
         {# Block main paramétrable dans chaque page twig #}
         <main>
+            {# Titre de l'application #}
+            <h1 id="titre">C'plus bon !</h1>
             {% block main %}{% endblock %}
         </main>
 
@@ -60,7 +61,16 @@
             <span>&copy; CplusBon.com • {{ "now"|date("Y") }}</span>
         </footer>
 
+
+        <script type="text/javascript">
+            window.addEventListener("scroll", function() {
+                var header = document.querySelector("header");
+                header.classList.toggle("sticky", window.scrollY > 0);
+            })
+        </script>
         {# Block javascript paramétrable dans chaque page twig #}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+
+        {% endblock %}
     </body>
 </html>

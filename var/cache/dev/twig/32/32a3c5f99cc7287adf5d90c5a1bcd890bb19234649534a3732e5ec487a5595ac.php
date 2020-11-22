@@ -66,7 +66,7 @@ class __TwigTemplate_3d20e127cfb0685b152ed4273214adca479641b507b36cc938e53eb6cfc
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Home ";
+        echo "Frigo ";
         $this->displayParentBlock("title", $context, $blocks);
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -269,14 +269,18 @@ class __TwigTemplate_3d20e127cfb0685b152ed4273214adca479641b507b36cc938e53eb6cfc
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName(\"close\")[0];
 
+        var menuHeader = document.getElementById(\"menu-header\");
+
         // When the user clicks the button, open the modal
         btn.onclick = function() {
             modal.style.display = \"block\";
+            menuHeader.style.display = \"none\";
         }
 
         // When the user clicks on <span> (x), close the modal
         span.onclick = function() {
             modal.style.display = \"none\";
+            menuHeader.style.display = \"flex\";
         }
 
         // When the user clicks anywhere outside of the modal, close it
@@ -314,7 +318,7 @@ class __TwigTemplate_3d20e127cfb0685b152ed4273214adca479641b507b36cc938e53eb6cfc
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Home {{ parent() }}{% endblock %}
+{% block title %}Frigo {{ parent() }}{% endblock %}
 
 {% block main %}
 
@@ -414,14 +418,18 @@ class __TwigTemplate_3d20e127cfb0685b152ed4273214adca479641b507b36cc938e53eb6cfc
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName(\"close\")[0];
 
+        var menuHeader = document.getElementById(\"menu-header\");
+
         // When the user clicks the button, open the modal
         btn.onclick = function() {
             modal.style.display = \"block\";
+            menuHeader.style.display = \"none\";
         }
 
         // When the user clicks on <span> (x), close the modal
         span.onclick = function() {
             modal.style.display = \"none\";
+            menuHeader.style.display = \"flex\";
         }
 
         // When the user clicks anywhere outside of the modal, close it

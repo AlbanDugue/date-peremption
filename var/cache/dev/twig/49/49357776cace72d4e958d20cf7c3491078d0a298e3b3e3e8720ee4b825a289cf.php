@@ -109,38 +109,46 @@ class __TwigTemplate_f903aa05660bf84aa695c2b6a8ebe8fc6fda1375a79019492ae1c52dd4f
         }
         // line 45
         echo "
-            ";
-        // line 47
-        echo "            <h1 id=\"titre\">C'plus bon !</h1>
+
         </header>
 
         ";
-        // line 51
+        // line 50
         echo "        <main>
             ";
         // line 52
-        $this->displayBlock('main', $context, $blocks);
+        echo "            <h1 id=\"titre\">C'plus bon !</h1>
+            ";
         // line 53
+        $this->displayBlock('main', $context, $blocks);
+        // line 54
         echo "        </main>
 
         ";
-        // line 56
+        // line 57
         echo "        <footer>
             ";
-        // line 58
+        // line 59
         echo "            <hr>
             ";
-        // line 60
+        // line 61
         echo "            <span>&copy; CplusBon.com • ";
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, "now", "Y"), "html", null, true);
         echo "</span>
         </footer>
 
+
+        <script type=\"text/javascript\">
+            window.addEventListener(\"scroll\", function() {
+                var header = document.querySelector(\"header\");
+                header.classList.toggle(\"sticky\", window.scrollY > 0);
+            })
+        </script>
         ";
-        // line 64
+        // line 72
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 65
+        // line 75
         echo "    </body>
 </html>";
         
@@ -170,7 +178,7 @@ class __TwigTemplate_f903aa05660bf84aa695c2b6a8ebe8fc6fda1375a79019492ae1c52dd4f
 
     }
 
-    // line 52
+    // line 53
     public function block_main($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -188,7 +196,7 @@ class __TwigTemplate_f903aa05660bf84aa695c2b6a8ebe8fc6fda1375a79019492ae1c52dd4f
 
     }
 
-    // line 64
+    // line 72
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -198,6 +206,9 @@ class __TwigTemplate_f903aa05660bf84aa695c2b6a8ebe8fc6fda1375a79019492ae1c52dd4f
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
+        // line 73
+        echo "
+        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -218,7 +229,7 @@ class __TwigTemplate_f903aa05660bf84aa695c2b6a8ebe8fc6fda1375a79019492ae1c52dd4f
 
     public function getDebugInfo()
     {
-        return array (  192 => 64,  174 => 52,  155 => 10,  144 => 65,  141 => 64,  134 => 60,  131 => 58,  128 => 56,  124 => 53,  122 => 52,  119 => 51,  114 => 47,  111 => 45,  102 => 39,  95 => 36,  91 => 33,  88 => 32,  84 => 29,  81 => 27,  76 => 23,  68 => 16,  62 => 13,  56 => 10,  46 => 1,);
+        return array (  210 => 73,  200 => 72,  182 => 53,  163 => 10,  152 => 75,  149 => 72,  135 => 61,  132 => 59,  129 => 57,  125 => 54,  123 => 53,  120 => 52,  117 => 50,  111 => 45,  102 => 39,  95 => 36,  91 => 33,  88 => 32,  84 => 29,  81 => 27,  76 => 23,  68 => 16,  62 => 13,  56 => 10,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -268,12 +279,13 @@ class __TwigTemplate_f903aa05660bf84aa695c2b6a8ebe8fc6fda1375a79019492ae1c52dd4f
             </nav>
             {% endif %}
 
-            {# Titre de l'application #}
-            <h1 id=\"titre\">C'plus bon !</h1>
+
         </header>
 
         {# Block main paramétrable dans chaque page twig #}
         <main>
+            {# Titre de l'application #}
+            <h1 id=\"titre\">C'plus bon !</h1>
             {% block main %}{% endblock %}
         </main>
 
@@ -285,8 +297,17 @@ class __TwigTemplate_f903aa05660bf84aa695c2b6a8ebe8fc6fda1375a79019492ae1c52dd4f
             <span>&copy; CplusBon.com • {{ \"now\"|date(\"Y\") }}</span>
         </footer>
 
+
+        <script type=\"text/javascript\">
+            window.addEventListener(\"scroll\", function() {
+                var header = document.querySelector(\"header\");
+                header.classList.toggle(\"sticky\", window.scrollY > 0);
+            })
+        </script>
         {# Block javascript paramétrable dans chaque page twig #}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+
+        {% endblock %}
     </body>
 </html>", "base.html.twig", "C:\\wamp64\\www\\PROJET-PERSO\\date-peremption\\templates\\base.html.twig");
     }
