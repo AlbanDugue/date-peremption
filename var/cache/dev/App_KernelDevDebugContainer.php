@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \Container5otICri\App_KernelDevDebugContainer([
     'container.build_hash' => '5otICri',
-    'container.build_id' => '5d294dff',
-    'container.build_time' => 1605827418,
+    'container.build_id' => '49791258',
+    'container.build_time' => 1606062412,
 ], __DIR__.\DIRECTORY_SEPARATOR.'Container5otICri');
