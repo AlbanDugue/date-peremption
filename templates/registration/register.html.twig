@@ -22,8 +22,15 @@
                 }) }}
 
                 <button type="submit" id="bouton-register">Créer mon compte</button>
+
+
         </div>
         {{ form_end(registrationForm) }}
+
+        <div id="se-login">
+            <h4>Tu as déjà un compte ? <span>Connectes toi</span></h4>
+            <p><a href="{{ path('app_login')}}">Se connecter</a></p>
+        </div>
 
     </div>
 {% endblock %}

@@ -29,9 +29,32 @@
         <header>
 
             {# Barre de navigation si l'utilisateur est sur la page d'accueil #}
-            {% if app.request.get('_route') == 'home' %}
+            {% if app.request.get('_route') == 'home' or app.request.get('_route') == 'infos' %}
             <nav id="menu-header">
                 <ul>
+
+
+
+                    {# Lien vers la page d'accueil #}
+                    {% if app.request.get('_route') != 'home' %}
+                    <a href="{{ path('home') }}">
+                        <li>
+                            <i class="far fa-list-alt"></i>
+                            <p></p>
+                        </li>
+                    </a>
+                    {% endif %}
+
+                    {# Lien vers la page informations #}
+                    {% if app.request.get('_route') != 'infos' %}
+                    <a href="{{ path('infos') }}">
+                        <li>
+                            <i class="fas fa-info-circle"></i>
+                            <p></p>
+                        </li>
+                    </a>
+                    {% endif %}
+
                     {# Lien pour se déconnecter #}
                     <a href="{{ path('app_logout') }}">
                         <li>

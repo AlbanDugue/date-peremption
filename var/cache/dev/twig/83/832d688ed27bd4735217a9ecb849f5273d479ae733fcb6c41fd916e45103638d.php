@@ -127,11 +127,21 @@ class __TwigTemplate_e3e942ce8c1cf552e9362d0cf9e217ed4ed4ac5f1cdc19041beb5fafa9b
         echo "
 
                 <button type=\"submit\" id=\"bouton-register\">Créer mon compte</button>
+
+
         </div>
         ";
-        // line 26
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 26, $this->source); })()), 'form_end');
+        // line 28
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 28, $this->source); })()), 'form_end');
         echo "
+
+        <div id=\"se-login\">
+            <h4>Tu as déjà un compte ? <span>Connectes toi</span></h4>
+            <p><a href=\"";
+        // line 32
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+        echo "\">Se connecter</a></p>
+        </div>
 
     </div>
 ";
@@ -155,7 +165,7 @@ class __TwigTemplate_e3e942ce8c1cf552e9362d0cf9e217ed4ed4ac5f1cdc19041beb5fafa9b
 
     public function getDebugInfo()
     {
-        return array (  133 => 26,  127 => 22,  125 => 20,  122 => 19,  120 => 17,  116 => 16,  112 => 14,  103 => 12,  99 => 11,  94 => 9,  89 => 6,  79 => 5,  59 => 3,  36 => 1,);
+        return array (  142 => 32,  135 => 28,  127 => 22,  125 => 20,  122 => 19,  120 => 17,  116 => 16,  112 => 14,  103 => 12,  99 => 11,  94 => 9,  89 => 6,  79 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -184,8 +194,15 @@ class __TwigTemplate_e3e942ce8c1cf552e9362d0cf9e217ed4ed4ac5f1cdc19041beb5fafa9b
                 }) }}
 
                 <button type=\"submit\" id=\"bouton-register\">Créer mon compte</button>
+
+
         </div>
         {{ form_end(registrationForm) }}
+
+        <div id=\"se-login\">
+            <h4>Tu as déjà un compte ? <span>Connectes toi</span></h4>
+            <p><a href=\"{{ path('app_login')}}\">Se connecter</a></p>
+        </div>
 
     </div>
 {% endblock %}

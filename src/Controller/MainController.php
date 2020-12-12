@@ -112,4 +112,12 @@ class MainController extends AbstractController
         return $this->redirectToRoute('home');
     }
 
+    /**
+     * @Route("/infos", name="infos")
+     * @Annotation "Lien qui mène à la page d'information du site"
+     */
+    public function urlInfo () {
+        return $this->render('main/informations.html.twig');
+    }
+
 }
