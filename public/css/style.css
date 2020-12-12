@@ -1089,3 +1089,53 @@ article:hover {
     color: #b8e994;
     transition: all .3s cubic-bezier(.67,-.51,.42,1.43);
 }
+
+/********************************************************************************************************************/
+/*______________________________________________PAGE INFORMATIONS___________________________________________________*/
+/********************************************************************************************************************/
+
+/*
+    @Élément: Conteneur de la page informations
+    @Description :  - Mise en place du flex et de la structure de la page
+ */
+#container-informations {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    width: 65%;
+}
+
+#container-informations div {
+    margin-bottom: 3rem;
+}
+
+#container-informations div h1 {
+    margin-bottom: 0.5rem;
+}
+
+#container-informations div h2 {
+    margin-top: 0.5rem;
+    margin-left: 1.5rem;
+}
+
+#container-informations div p {
+    line-height: 1.5rem;
+    font-size: 1.2rem;
+    margin-left: 3rem;
+}
+
+@media screen and (max-width: 800px) {
+    #container-informations {
+        width: 65%;
+        text-align: center;
+    }
+
+    #container-informations div h2 {
+        margin-left: 0rem;
+    }
+
+    #container-informations div p {
+        margin-left: 0rem;
+    }
+}
