@@ -15,7 +15,10 @@ class AlimentType extends AbstractType
     {
         $builder
             ->add('nom', TextType::class, [
-                'label' => 'Nom de l\'aliment'
+                'label' => 'Nom de l\'aliment',
+                'attr' => array(
+                    'placeholder' => ''
+                )
             ])
             ->add('datePeremption', DateType::class, [
                 'label' => 'Date de péremption',

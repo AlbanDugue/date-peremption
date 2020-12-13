@@ -217,24 +217,25 @@ class __TwigTemplate_3d20e127cfb0685b152ed4273214adca479641b507b36cc938e53eb6cfc
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["alimentForm"]) || array_key_exists("alimentForm", $context) ? $context["alimentForm"] : (function () { throw new RuntimeError('Variable "alimentForm" does not exist.', 76, $this->source); })()), "nom", [], "any", false, false, false, 76), 'row');
         echo "
 
+
                 ";
-        // line 78
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["alimentForm"]) || array_key_exists("alimentForm", $context) ? $context["alimentForm"] : (function () { throw new RuntimeError('Variable "alimentForm" does not exist.', 78, $this->source); })()), "datePeremption", [], "any", false, false, false, 78), 'row');
+        // line 79
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["alimentForm"]) || array_key_exists("alimentForm", $context) ? $context["alimentForm"] : (function () { throw new RuntimeError('Variable "alimentForm" does not exist.', 79, $this->source); })()), "datePeremption", [], "any", false, false, false, 79), 'row');
         echo "
 
                 ";
-        // line 80
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["alimentForm"]) || array_key_exists("alimentForm", $context) ? $context["alimentForm"] : (function () { throw new RuntimeError('Variable "alimentForm" does not exist.', 80, $this->source); })()), 'widget');
+        // line 81
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["alimentForm"]) || array_key_exists("alimentForm", $context) ? $context["alimentForm"] : (function () { throw new RuntimeError('Variable "alimentForm" does not exist.', 81, $this->source); })()), 'widget');
         echo "
 
                     ";
-        // line 83
+        // line 84
         echo "                    <button id=\"validation-ajout\" type=\"submit\">Ajouter</button>
                 </div>
 
                 ";
-        // line 86
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["alimentForm"]) || array_key_exists("alimentForm", $context) ? $context["alimentForm"] : (function () { throw new RuntimeError('Variable "alimentForm" does not exist.', 86, $this->source); })()), 'form_end');
+        // line 87
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["alimentForm"]) || array_key_exists("alimentForm", $context) ? $context["alimentForm"] : (function () { throw new RuntimeError('Variable "alimentForm" does not exist.', 87, $this->source); })()), 'form_end');
         echo "
             </div>
         </div>
@@ -248,7 +249,7 @@ class __TwigTemplate_3d20e127cfb0685b152ed4273214adca479641b507b36cc938e53eb6cfc
 
     }
 
-    // line 92
+    // line 93
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -258,7 +259,7 @@ class __TwigTemplate_3d20e127cfb0685b152ed4273214adca479641b507b36cc938e53eb6cfc
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 93
+        // line 94
         echo "    <script>
         // Get the modal
         var modal = document.getElementById(\"myModal\");
@@ -311,7 +312,7 @@ class __TwigTemplate_3d20e127cfb0685b152ed4273214adca479641b507b36cc938e53eb6cfc
 
     public function getDebugInfo()
     {
-        return array (  262 => 93,  252 => 92,  237 => 86,  232 => 83,  227 => 80,  222 => 78,  217 => 76,  211 => 74,  207 => 71,  203 => 68,  199 => 65,  193 => 60,  190 => 58,  179 => 54,  176 => 52,  171 => 48,  167 => 46,  165 => 45,  162 => 44,  160 => 43,  156 => 41,  154 => 40,  151 => 39,  146 => 37,  143 => 35,  139 => 34,  136 => 33,  133 => 31,  127 => 27,  124 => 26,  121 => 24,  119 => 23,  114 => 22,  111 => 20,  102 => 13,  100 => 12,  97 => 11,  93 => 8,  90 => 6,  80 => 5,  60 => 3,  37 => 1,);
+        return array (  263 => 94,  253 => 93,  238 => 87,  233 => 84,  228 => 81,  223 => 79,  217 => 76,  211 => 74,  207 => 71,  203 => 68,  199 => 65,  193 => 60,  190 => 58,  179 => 54,  176 => 52,  171 => 48,  167 => 46,  165 => 45,  162 => 44,  160 => 43,  156 => 41,  154 => 40,  151 => 39,  146 => 37,  143 => 35,  139 => 34,  136 => 33,  133 => 31,  127 => 27,  124 => 26,  121 => 24,  119 => 23,  114 => 22,  111 => 20,  102 => 13,  100 => 12,  97 => 11,  93 => 8,  90 => 6,  80 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -392,6 +393,7 @@ class __TwigTemplate_3d20e127cfb0685b152ed4273214adca479641b507b36cc938e53eb6cfc
                 {{ form_start (alimentForm) }}
                 <div id=\"formAjoutAliment\">
                 {{ form_row(alimentForm.nom) }}
+
 
                 {{ form_row(alimentForm.datePeremption) }}
 

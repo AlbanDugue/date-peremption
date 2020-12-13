@@ -1028,6 +1028,25 @@ article:hover {
     border: solid 0.2rem white;
 }
 
+/*
+    @Élément: Garde le bon style de l'imput malgré l'autocomplétion
+    @Description :  - Stylisation de l'input
+ */
+#formCreaCompte div input:-webkit-autofill,
+#formCreaCompte div input:-webkit-autofill:hover,
+#formCreaCompte div input:-webkit-autofill:focus,
+#formCreaCompte div input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+/*
+    @Élément: Garde le bon style de l'imput malgré l'autocomplétion
+    @Description :  - Stylisation de l'input
+ */
+#formCreaCompte div input:-webkit-autofill {
+    -webkit-text-fill-color: #78e08f !important;
+}
+
 /*******************************************************/
 /*__________________SE LOGUER______________________*/
 /*******************************************************/
