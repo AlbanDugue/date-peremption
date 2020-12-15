@@ -136,7 +136,7 @@ class __TwigTemplate_e3e942ce8c1cf552e9362d0cf9e217ed4ed4ac5f1cdc19041beb5fafa9b
         echo "
 
         <div id=\"se-login\">
-            <h4>Tu as déjà un compte ? <span>Connectes toi</span></h4>
+            <h4>Tu as déjà un compte ? <span>Connecte-toi</span></h4>
             <p><a href=\"";
         // line 32
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
@@ -200,7 +200,7 @@ class __TwigTemplate_e3e942ce8c1cf552e9362d0cf9e217ed4ed4ac5f1cdc19041beb5fafa9b
         {{ form_end(registrationForm) }}
 
         <div id=\"se-login\">
-            <h4>Tu as déjà un compte ? <span>Connectes toi</span></h4>
+            <h4>Tu as déjà un compte ? <span>Connecte-toi</span></h4>
             <p><a href=\"{{ path('app_login')}}\">Se connecter</a></p>
         </div>
 
