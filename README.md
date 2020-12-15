@@ -8,6 +8,8 @@ sudo -s
 
 cd /var/www/html/date-peremption
 
+git pull
+
 chmod -R 777 /var/www/html/date-peremption/var/cache/dev/
 
 chmod -R 777 /var/www/html/date-peremption/var/log
