@@ -79,6 +79,7 @@ header.sticky {
     align-items: center;
     justify-content: flex-end;
     padding: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 /*
@@ -147,7 +148,8 @@ header.sticky {
     font-family: 'Caveat', cursive;
     text-align: center;
     font-size: 4.5rem;
-    padding: 3rem 0;
+    padding: 2rem 0;
+    margin-top: 2rem;
 }
 
 /*
@@ -177,7 +179,7 @@ body {
  */
 main {
     flex-grow:1; /* 4 */
-    padding: 2rem 1rem;
+    padding: 2rem 0rem;
 }
 
 /*
@@ -318,7 +320,7 @@ footer {
 .block-form label {
     margin-bottom: 0.3rem;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.7rem;
 }
 
 /*
@@ -327,13 +329,14 @@ footer {
                     - Stylisation de la typo
  */
 .block-form input {
-    width: 14rem;
-    height: 2rem;
+    width: 16.3rem;
+    height: 2.3rem;
     border-radius: 0.5rem;
+    padding: 0 0.5rem;
     outline: none;
     border: none;
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #78e08f;
     font-weight: bold;
     transition: all .3s cubic-bezier(.67,-.51,.42,1.43);
@@ -453,7 +456,7 @@ article {
     align-items: center;
     width: 100%;
     font-size: 1rem;
-    padding: 1rem;
+    padding: 1rem 0.5rem;
     border-radius: 2rem;
     transition: all .3s cubic-bezier(.67,-.51,.42,1.43);
 }
@@ -492,7 +495,7 @@ article:hover {
 @media screen and (max-width: 1050px) {
     article {
         margin-bottom: 1.5rem;
-        width: 90%;
+        width: 93%;
         font-size: 1.5rem;
     }
 }
@@ -582,7 +585,7 @@ article:hover {
     justify-content: right;
     align-items: flex-end;
     width: 100%;
-    padding: 1rem 0.5rem;
+    padding: 1rem 0rem;
 }
 
 /*
@@ -603,7 +606,7 @@ article:hover {
 
 @media screen and (max-width: 1050px) {
     #bloc-ajout {
-        width: 90%;
+        width: 93%;
     }
 }
 
@@ -799,9 +802,9 @@ article:hover {
     @Description :  - Stylisation du texte et marge
  */
 #formAjoutAliment label {
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.5rem;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.7rem;
 }
 
 /*
@@ -810,14 +813,15 @@ article:hover {
                     - Stylisation et marge de lélément
  */
 #formAjoutAliment input {
-    width: 14rem;
-    height: 2rem;
+    width: 16.3rem;
+    height: 2.3rem;
     margin-bottom: 1rem;
+    padding: 0 0.5rem;
     border-radius: 0.5rem;
     outline: none;
     border: none;
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: white;
     background-color: #78e08f;
     font-weight: bold;
@@ -997,7 +1001,7 @@ article:hover {
 #formCreaCompte div label {
     margin-bottom: 0.3rem;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.7rem;
 }
 
 /*
@@ -1006,13 +1010,14 @@ article:hover {
                     - Stylisation de la typo
  */
 #formCreaCompte div input {
-    width: 14rem;
-    height: 2rem;
+    width: 16.3rem;
+    height: 2.3rem;
     border-radius: 0.5rem;
+    padding: 0 0.5rem;
     outline: none;
     border: none;
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #78e08f;
     font-weight: bold;
 }
